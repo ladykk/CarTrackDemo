@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>CarTrack Plugin</title>
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="header-container">
+        <h1>CarTrack Plugin</h1>
+        <div id="deviceready">
+          <p class="event listening blink">Connecting</p>
+          <p class="event received">Ready</p>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="input-container">
+          <label>Current key:</label>
+          <input id="authKey" readonly placeholder="Not set yet" />
+        </div>
+        <hr />
+        <div class="input-container">
+          <label>Terminal ID:</label>
+          <input id="terminalId" placeholder="Terminal ID" />
+        </div>
+        <div class="input-container">
+          <label>Scan Timeout(s):</label>
+          <input
+            id="scanTimeout"
+            placeholder="Scan Timeout"
+            type="number"
+            value="10"
+          />
+        </div>
+        <button id="terminalBtn">Create BLE Terminal</button>
+        <hr />
+        <div class="input-container">
+          <label>New key:</label>
+          <input id="newAuthKey" placeholder="New key" />
+        </div>
+        <div class="button-container">
+          <button id="authKeySaveBtn">Save Key</button>
+          <button id="authKeyRemoveBtn">Remove Key</button>
+          <button id="connectBtn">Connect</button>
+          <button id="disconnectBtn">Disconnect</button>
+        </div>
+        <hr />
+        <label>Actions:</label>
+        <div class="button-container">
+          <button id="getLockStateBtn">Get Lock State</button>
+          <button id="getVehicleStatBtn">Get Vehicle Stat</button>
+          <button id="lockBtn">Lock</button>
+          <button id="unlockBtn">Unlock</button>
+          <button id="unlockNoKeyBtn">Unlock No Key</button>
+          <button id="ignitionStatBtn">Ignition Stat</button>
+          <button id="headlightBtn">Headlight</button>
+          <button id="hornBtn">Horn</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
