@@ -54,6 +54,11 @@
       </div>
       <div class="form-container">
         <div class="input-container">
+          <label>Log:</label>
+          <textarea id="log" rows="10" readonly></textarea>
+        </div>
+        <hr />
+        <div class="input-container">
           <label>Current key:</label>
           <input id="authKey" readonly placeholder="Not set yet" />
         </div>
@@ -86,16 +91,28 @@
         <hr />
         <label>Actions:</label>
         <div class="button-container">
-          <button id="getLockStateBtn">Get Lock State</button>
-          <button id="getVehicleStatBtn">Get Vehicle Stat</button>
           <button id="lockBtn">Lock</button>
           <button id="unlockBtn">Unlock</button>
           <button id="unlockNoKeyBtn">Unlock No Key</button>
-          <button id="ignitionStatBtn">Ignition Stat</button>
           <button id="headlightBtn">Headlight</button>
           <button id="hornBtn">Horn</button>
         </div>
-      </div>
+        <hr />
+        <div class="button-container">
+          <label>Lock State:</label>
+          <label id="lockState">Unknown</label>
+        </div>
+        <button id="getLockStateBtn">Get Lock State</button>
+        <hr />
+        <div class="button-container">
+          <label>Ignition State:</label>
+          <label id="ignitionState"></label>
+        </div>
+        <button id="ignitionStatBtn">Ignition Stat</button>
+        <hr/>
+        <label>Stats:</label>
+        <textarea id="stats" rows="20" readonly></textarea>
+        <button id="getVehicleStatBtn">Get Vehicle Stat</button>
     </div>
 
     <script src="cordova.js"></script>
